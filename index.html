@@ -113,12 +113,71 @@
     <main class="container mx-auto px-6 py-12">
         <!-- Sección Principal -->
         <section id="homeSection" class="fade-in">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-es="Reportes Mensuales" data-en="Monthly Reports">Reportes Mensuales</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" data-es="Accede a los reportes más recientes de desempeño de los Block Producers del ecosistema Telos. Información actualizada mensualmente para mantener la transparencia y el control de calidad." data-en="Access the latest performance reports of Block Producers in the Telos ecosystem. Information updated monthly to maintain transparency and quality control.">
-                    Accede a los reportes más recientes de desempeño de los Block Producers del ecosistema Telos. 
-                    Información actualizada mensualmente para mantener la transparencia y el control de calidad.
-                </p>
+            <!-- Hero Section -->
+            <div class="relative overflow-hidden bg-gradient-to-br from-telos-purple via-telos-blue to-indigo-600 rounded-3xl shadow-2xl mb-20">
+                <div class="absolute inset-0 bg-black opacity-10"></div>
+                <div class="relative px-8 py-20 md:py-32 text-center text-white">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="mb-8">
+                            <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-6 backdrop-blur-sm">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-es="Transparencia Total en Telos" data-en="Total Transparency in Telos">
+                            Transparencia Total en Telos
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto" data-es="Monitoreo profesional y reportes detallados de Block Producers. Mantenemos la integridad del ecosistema Telos con datos verificables y actualizaciones mensuales." data-en="Professional monitoring and detailed Block Producer reports. We maintain the integrity of the Telos ecosystem with verifiable data and monthly updates.">
+                            Monitoreo profesional y reportes detallados de Block Producers. Mantenemos la integridad del ecosistema Telos con datos verificables y actualizaciones mensuales.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <button onclick="document.getElementById('reportsGrid').scrollIntoView({behavior: 'smooth'})" class="bg-white text-telos-purple px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                <span data-es="Ver Reportes Actuales" data-en="View Current Reports">Ver Reportes Actuales</span>
+                            </button>
+                            <button onclick="showSection('reports')" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-telos-purple transition-all duration-300 transform hover:scale-105">
+                                <span data-es="Historial Completo" data-en="Complete History">Historial Completo</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"></div>
+                <div class="absolute bottom-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full blur-xl"></div>
+                <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"></div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">24/7</h3>
+                    <p class="text-gray-600 font-medium" data-es="Monitoreo Continuo" data-en="Continuous Monitoring">Monitoreo Continuo</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">100%</h3>
+                    <p class="text-gray-600 font-medium" data-es="Datos Verificables" data-en="Verifiable Data">Datos Verificables</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2" data-es="Mensual" data-en="Monthly">Mensual</h3>
+                    <p class="text-gray-600 font-medium" data-es="Reportes Actualizados" data-en="Updated Reports">Reportes Actualizados</p>
+                </div>
             </div>
 
             <!-- Sección Sobre Nosotros -->
@@ -246,72 +305,106 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
+            <!-- Reports Grid -->
+            <div id="reportsGrid" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-es="Reportes Mensuales Disponibles" data-en="Available Monthly Reports">Reportes Mensuales Disponibles</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-es="Descarga los reportes más recientes con análisis detallado del desempeño de cada Block Producer" data-en="Download the latest reports with detailed analysis of each Block Producer's performance">
+                        Descarga los reportes más recientes con análisis detallado del desempeño de cada Block Producer
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Principal" data-en="Main">Principal</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Final Report</h3>
-                        <p class="text-gray-600 mb-6">Reporte completo mensual de todos los Block Producers</p>
-                        <button onclick="downloadFile('finalReport')" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold w-full">
-                            Descargar PDF
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Final Report</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed" data-es="Reporte completo mensual con análisis exhaustivo de todos los Block Producers, incluyendo métricas de rendimiento y cumplimiento." data-en="Complete monthly report with comprehensive analysis of all Block Producers, including performance and compliance metrics.">
+                            Reporte completo mensual con análisis exhaustivo de todos los Block Producers, incluyendo métricas de rendimiento y cumplimiento.
+                        </p>
+                        <button onclick="downloadFile('finalReport')" class="w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <span data-es="Descargar Reporte Principal" data-en="Download Main Report">Descargar Reporte Principal</span>
+                        </button>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                </svg>
+                            </div>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Crítico" data-en="Critical">Crítico</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Blocks Lost Per Month</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed" data-es="Análisis detallado de bloques perdidos por cada Block Producer, identificando patrones y causas de las interrupciones en la red." data-en="Detailed analysis of blocks lost by each Block Producer, identifying patterns and causes of network interruptions.">
+                            Análisis detallado de bloques perdidos por cada Block Producer, identificando patrones y causas de las interrupciones en la red.
+                        </p>
+                        <button onclick="downloadFile('blocksLost')" class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <span data-es="Descargar Análisis de Bloques" data-en="Download Block Analysis">Descargar Análisis de Bloques</span>
                         </button>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                            </svg>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Testnet" data-en="Testnet">Testnet</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Blocks Lost Per Month</h3>
-                        <p class="text-gray-600 mb-6">Análisis de bloques perdidos por cada BP</p>
-                        <button onclick="downloadFile('blocksLost')" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold w-full">
-                            Descargar PDF
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Book of Off Testnet</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed" data-es="Registro completo de actividades y participación de los Block Producers en la red de pruebas, evaluando su compromiso con el desarrollo." data-en="Complete record of Block Producer activities and participation in the test network, evaluating their commitment to development.">
+                            Registro completo de actividades y participación de los Block Producers en la red de pruebas, evaluando su compromiso con el desarrollo.
+                        </p>
+                        <button onclick="downloadFile('testnetBook')" class="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <span data-es="Descargar Registro Testnet" data-en="Download Testnet Record">Descargar Registro Testnet</span>
                         </button>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                            </svg>
+                    <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                </svg>
+                            </div>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Servicios" data-en="Services">Servicios</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Book of Off Testnet</h3>
-                        <p class="text-gray-600 mb-6">Registro de actividades en la red de pruebas</p>
-                        <button onclick="downloadFile('testnetBook')" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold w-full">
-                            Descargar PDF
-                        </button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Additional Services</h3>
-                        <p class="text-gray-600 mb-6">Servicios adicionales y métricas complementarias</p>
-                        <button onclick="downloadFile('additionalServices')" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold w-full">
-                            Descargar PDF
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Additional Services</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed" data-es="Evaluación de servicios adicionales proporcionados por los Block Producers, incluyendo APIs, herramientas y contribuciones al ecosistema." data-en="Evaluation of additional services provided by Block Producers, including APIs, tools and contributions to the ecosystem.">
+                            Evaluación de servicios adicionales proporcionados por los Block Producers, incluyendo APIs, herramientas y contribuciones al ecosistema.
+                        </p>
+                        <button onclick="downloadFile('additionalServices')" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <span data-es="Descargar Servicios Adicionales" data-en="Download Additional Services">Descargar Servicios Adicionales</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4" data-es="Última Actualización" data-en="Last Update">Última Actualización</h3>
-                <p class="text-gray-600 mb-2" data-es="Los reportes se actualizan mensualmente" data-en="Reports are updated monthly">Los reportes se actualizan mensualmente</p>
-                <p class="text-telos-purple font-semibold" id="lastUpdate">Diciembre 2024</p>
+            <!-- Last Update Section -->
+            <div class="bg-gradient-to-r from-telos-purple to-telos-blue rounded-2xl shadow-xl p-8 text-center text-white">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold mb-4" data-es="Última Actualización" data-en="Last Update">Última Actualización</h3>
+                <p class="text-blue-100 mb-4 text-lg" data-es="Los reportes se actualizan mensualmente con la información más reciente del ecosistema" data-en="Reports are updated monthly with the latest ecosystem information">Los reportes se actualizan mensualmente con la información más reciente del ecosistema</p>
+                <div class="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                    <p class="text-2xl font-bold" id="lastUpdate">Diciembre 2024</p>
+                </div>
             </div>
         </section>
 
@@ -1091,5 +1184,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9966564f25da492b',t:'MTc2MTc3OTMzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99667521a79a492b',t:'MTc2MTc4MDU5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
