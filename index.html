@@ -72,103 +72,103 @@
  </head>
  <body class="bg-gray-50 min-h-full">
   <header class="gradient-bg text-white shadow-lg fixed top-0 left-0 right-0 z-40 backdrop-blur-sm">
-   <nav class="container mx-auto px-6 py-4">
+   <nav class="container mx-auto px-4 sm:px-6 py-3 md:py-4">
     <div class="flex items-center justify-between">
-     <div class="flex items-center space-x-4">
-      <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-       <svg class="w-8 h-8 text-telos-purple" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+     <div class="flex items-center space-x-3 md:space-x-4">
+      <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center">
+       <svg class="w-6 h-6 md:w-8 md:h-8 text-telos-purple" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
        </svg>
       </div>
       <div>
-       <h1 class="text-2xl font-bold">Compliance BP Telos</h1>
-       <p class="text-blue-100 text-sm">Reportes de Block Producers</p>
+       <h1 class="text-lg md:text-xl lg:text-2xl font-bold">Compliance BP Telos</h1>
+       <p class="text-blue-100 text-xs md:text-sm">Reportes de Block Producers</p>
       </div>
      </div>
-     <div class="hidden md:flex items-center space-x-6"><button onclick="showSection('home')" class="hover:text-blue-200 transition-colors duration-200 font-medium" data-es="Inicio" data-en="Home">Inicio</button> <button onclick="showSection('reports')" class="hover:text-blue-200 transition-colors duration-200 font-medium" data-es="Reportes Anteriores" data-en="Previous Reports">Reportes Anteriores</button> <button onclick="showSection('quickReport')" class="hover:text-blue-200 transition-colors duration-200 font-medium" data-es="Reporte Rápido" data-en="Quick Report">Reporte Rápido</button> <button id="adminMenuBtn" onclick="showAdminSection()" class="hidden hover:text-blue-200 transition-colors duration-200 font-medium" data-es="Panel Admin" data-en="Admin Panel">Panel Admin</button>
-      <div class="flex items-center space-x-2 ml-4"><button onclick="changeLanguage('es')" class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20" id="btnEs">ES</button> <span class="text-blue-200">|</span> <button onclick="changeLanguage('en')" class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20" id="btnEn">EN</button>
+     <div class="hidden md:flex items-center space-x-4 lg:space-x-6"><button onclick="showSection('home')" class="hover:text-blue-200 transition-colors duration-200 font-medium text-sm lg:text-base" data-es="Inicio" data-en="Home">Inicio</button> <button onclick="showSection('reports')" class="hover:text-blue-200 transition-colors duration-200 font-medium text-sm lg:text-base" data-es="Reportes Anteriores" data-en="Previous Reports">Reportes Anteriores</button> <button onclick="showSection('quickReport')" class="hover:text-blue-200 transition-colors duration-200 font-medium text-sm lg:text-base" data-es="Reporte Rápido" data-en="Quick Report">Reporte Rápido</button> <button id="adminMenuBtn" onclick="showAdminSection()" class="hidden hover:text-blue-200 transition-colors duration-200 font-medium text-sm lg:text-base" data-es="Panel Admin" data-en="Admin Panel">Panel Admin</button>
+      <div class="flex items-center space-x-2 ml-4"><button onclick="changeLanguage('es')" class="px-2 md:px-3 py-1 rounded-md text-xs md:text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20" id="btnEs">ES</button> <span class="text-blue-200 text-xs md:text-sm">|</span> <button onclick="changeLanguage('en')" class="px-2 md:px-3 py-1 rounded-md text-xs md:text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20" id="btnEn">EN</button>
       </div>
-     </div><button class="md:hidden text-white" onclick="toggleMobileMenu()">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+     </div><button class="md:hidden text-white p-2" onclick="toggleMobileMenu()">
+      <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2"><button onclick="showSection('home')" class="block w-full text-left py-2 hover:text-blue-200 transition-colors duration-200" data-es="Inicio" data-en="Home">Inicio</button> <button onclick="showSection('reports')" class="block w-full text-left py-2 hover:text-blue-200 transition-colors duration-200" data-es="Reportes Anteriores" data-en="Previous Reports">Reportes Anteriores</button> <button onclick="showSection('quickReport')" class="block w-full text-left py-2 hover:text-blue-200 transition-colors duration-200" data-es="Reporte Rápido" data-en="Quick Report">Reporte Rápido</button> <button id="adminMobileBtn" onclick="showAdminSection()" class="hidden block w-full text-left py-2 hover:text-blue-200 transition-colors duration-200" data-es="Panel Admin" data-en="Admin Panel">Panel Admin</button>
-     <div class="flex space-x-4 py-2"><button onclick="changeLanguage('es')" class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20">ES</button> <button onclick="changeLanguage('en')" class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20">EN</button>
+    <div id="mobileMenu" class="hidden md:hidden mt-3 md:mt-4 space-y-2 bg-white bg-opacity-10 rounded-lg p-3 backdrop-blur-sm"><button onclick="showSection('home')" class="block w-full text-left py-2 px-3 hover:bg-white hover:bg-opacity-20 rounded-md transition-colors duration-200 text-sm" data-es="Inicio" data-en="Home">Inicio</button> <button onclick="showSection('reports')" class="block w-full text-left py-2 px-3 hover:bg-white hover:bg-opacity-20 rounded-md transition-colors duration-200 text-sm" data-es="Reportes Anteriores" data-en="Previous Reports">Reportes Anteriores</button> <button onclick="showSection('quickReport')" class="block w-full text-left py-2 px-3 hover:bg-white hover:bg-opacity-20 rounded-md transition-colors duration-200 text-sm" data-es="Reporte Rápido" data-en="Quick Report">Reporte Rápido</button> <button id="adminMobileBtn" onclick="showAdminSection()" class="hidden block w-full text-left py-2 px-3 hover:bg-white hover:bg-opacity-20 rounded-md transition-colors duration-200 text-sm" data-es="Panel Admin" data-en="Admin Panel">Panel Admin</button>
+     <div class="flex justify-center space-x-4 py-2 border-t border-white border-opacity-20 mt-2 pt-3"><button onclick="changeLanguage('es')" class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20" id="btnEsMobile">ES</button> <button onclick="changeLanguage('en')" class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white hover:bg-opacity-20" id="btnEnMobile">EN</button>
      </div>
     </div>
    </nav>
   </header>
-  <main class="container mx-auto px-6 py-12 pt-32"><!-- Sección Principal -->
+  <main class="container mx-auto px-4 sm:px-6 py-8 md:py-12 pt-24 sm:pt-28 md:pt-32"><!-- Sección Principal -->
    <section id="homeSection" class="fade-in"><!-- Hero Section -->
-    <div class="relative overflow-hidden bg-gradient-to-br from-telos-purple via-telos-blue to-indigo-600 rounded-3xl shadow-2xl mb-20">
+    <div class="relative overflow-hidden bg-gradient-to-br from-telos-purple via-telos-blue to-indigo-600 rounded-2xl md:rounded-3xl shadow-2xl mb-12 md:mb-20">
      <div class="absolute inset-0 bg-black opacity-10"></div>
-     <div class="relative px-8 py-20 md:py-32 text-center text-white">
+     <div class="relative px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-32 text-center text-white">
       <div class="max-w-4xl mx-auto">
-       <div class="mb-8">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-6 backdrop-blur-sm">
-         <svg class="w-10 h-10 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+       <div class="mb-6 md:mb-8">
+        <div class="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white bg-opacity-20 rounded-full mb-4 md:mb-6 backdrop-blur-sm">
+         <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
          </svg>
         </div>
        </div>
-       <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-es="Transparencia Total en Telos" data-en="Total Transparency in Telos">Transparencia Total en Telos</h1>
-       <p class="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto" data-es="Monitoreo profesional y reportes detallados de Block Producers. Mantenemos la integridad del ecosistema Telos con datos verificables y actualizaciones mensuales." data-en="Professional monitoring and detailed Block Producer reports. We maintain the integrity of the Telos ecosystem with verifiable data and monthly updates.">Monitoreo profesional y reportes detallados de Block Producers. Mantenemos la integridad del ecosistema Telos con datos verificables y actualizaciones mensuales.</p>
-       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"><button onclick="document.getElementById('reportsGrid').scrollIntoView({behavior: 'smooth'})" class="bg-white text-telos-purple px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"> <span data-es="Ver Reportes Actuales" data-en="View Current Reports">Ver Reportes Actuales</span> </button> <button onclick="showSection('reports')" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-telos-purple transition-all duration-300 transform hover:scale-105"> <span data-es="Historial Completo" data-en="Complete History">Historial Completo</span> </button>
+       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight px-2" data-es="Transparencia Total en Telos" data-en="Total Transparency in Telos">Transparencia Total en Telos</h1>
+       <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto px-2" data-es="Monitoreo profesional y reportes detallados de Block Producers. Mantenemos la integridad del ecosistema Telos con datos verificables y actualizaciones mensuales." data-en="Professional monitoring and detailed Block Producer reports. We maintain the integrity of the Telos ecosystem with verifiable data and monthly updates.">Monitoreo profesional y reportes detallados de Block Producers. Mantenemos la integridad del ecosistema Telos con datos verificables y actualizaciones mensuales.</p>
+       <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4"><button onclick="document.getElementById('reportsGrid').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto bg-white text-telos-purple px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"> <span data-es="Ver Reportes Actuales" data-en="View Current Reports">Ver Reportes Actuales</span> </button> <button onclick="showSection('reports')" class="w-full sm:w-auto border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-white hover:text-telos-purple transition-all duration-300 transform hover:scale-105"> <span data-es="Historial Completo" data-en="Complete History">Historial Completo</span> </button>
        </div>
       </div>
-     </div><!-- Decorative elements -->
-     <div class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"></div>
-     <div class="absolute bottom-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full blur-xl"></div>
-     <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"></div>
+     </div><!-- Decorative elements - hidden on mobile -->
+     <div class="hidden md:block absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"></div>
+     <div class="hidden md:block absolute bottom-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full blur-xl"></div>
+     <div class="hidden md:block absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"></div>
     </div><!-- Stats Section -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-     <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-      <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-20">
+     <div class="text-center p-4 md:p-6 lg:p-8 bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+      <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+       <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
        </svg>
       </div>
-      <h3 class="text-3xl font-bold text-gray-800 mb-2">24/7</h3>
-      <p class="text-gray-600 font-medium" data-es="Monitoreo Continuo" data-en="Continuous Monitoring">Monitoreo Continuo</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1 md:mb-2">24/7</h3>
+      <p class="text-sm md:text-base text-gray-600 font-medium" data-es="Monitoreo Continuo" data-en="Continuous Monitoring">Monitoreo Continuo</p>
      </div>
-     <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-      <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+     <div class="text-center p-4 md:p-6 lg:p-8 bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+      <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+       <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
        </svg>
       </div>
-      <h3 class="text-3xl font-bold text-gray-800 mb-2">100%</h3>
-      <p class="text-gray-600 font-medium" data-es="Datos Verificables" data-en="Verifiable Data">Datos Verificables</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1 md:mb-2">100%</h3>
+      <p class="text-sm md:text-base text-gray-600 font-medium" data-es="Datos Verificables" data-en="Verifiable Data">Datos Verificables</p>
      </div>
-     <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-      <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+     <div class="text-center p-4 md:p-6 lg:p-8 bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 sm:col-span-2 lg:col-span-1">
+      <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+       <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
        </svg>
       </div>
-      <h3 class="text-3xl font-bold text-gray-800 mb-2" data-es="Mensual" data-en="Monthly">Mensual</h3>
-      <p class="text-gray-600 font-medium" data-es="Reportes Actualizados" data-en="Updated Reports">Reportes Actualizados</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1 md:mb-2" data-es="Mensual" data-en="Monthly">Mensual</h3>
+      <p class="text-sm md:text-base text-gray-600 font-medium" data-es="Reportes Actualizados" data-en="Updated Reports">Reportes Actualizados</p>
      </div>
     </div><!-- Sección Sobre Nosotros -->
-    <div class="bg-white rounded-xl shadow-lg p-8 mb-16">
-     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-gray-800 mb-6" data-es="📊 ¿Qué hacemos?" data-en="📊 What do we do?">📊 ¿Qué hacemos?</h3>
+    <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 lg:p-8 mb-12 md:mb-16">
+     <div class="text-center mb-8 md:mb-12">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6" data-es="📊 ¿Qué hacemos?" data-en="📊 What do we do?">📊 ¿Qué hacemos?</h3>
      </div>
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
       <div>
-       <p class="text-gray-700 mb-6 leading-relaxed" data-es="ComplianceBP Telos es un sistema de monitoreo mensual especializado en el ecosistema Telos. Cada mes, recopilamos, analizamos y documentamos todas las ocurrencias relevantes relacionadas con los productores de bloques (Block Producers), incluyendo:" data-en="ComplianceBP Telos is a monthly monitoring system specialized in the Telos ecosystem. Every month, we collect, analyze and document all relevant occurrences related to Block Producers, including:">ComplianceBP Telos es un sistema de monitoreo mensual especializado en el ecosistema Telos. Cada mes, recopilamos, analizamos y documentamos todas las ocurrencias relevantes relacionadas con los productores de bloques (Block Producers), incluyendo:</p>
-       <ul class="space-y-3 text-gray-700 mb-6">
-        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3"></span> <span data-es="Fallos operativos" data-en="Operational failures">Fallos operativos</span></li>
-        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3"></span> <span data-es="Pérdidas de bloques" data-en="Block losses">Pérdidas de bloques</span></li>
-        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3"></span> <span data-es="Participación en testnet" data-en="Testnet participation">Participación en testnet</span></li>
-        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3"></span> <span data-es="Servicios adicionales ofrecidos" data-en="Additional services offered">Servicios adicionales ofrecidos</span></li>
-        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3"></span> <span data-es="Incumplimientos de reglas" data-en="Rule violations">Incumplimientos de reglas</span></li>
+       <p class="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed" data-es="ComplianceBP Telos es un sistema de monitoreo mensual especializado en el ecosistema Telos. Cada mes, recopilamos, analizamos y documentamos todas las ocurrencias relevantes relacionadas con los productores de bloques (Block Producers), incluyendo:" data-en="ComplianceBP Telos is a monthly monitoring system specialized in the Telos ecosystem. Every month, we collect, analyze and document all relevant occurrences related to Block Producers, including:">ComplianceBP Telos es un sistema de monitoreo mensual especializado en el ecosistema Telos. Cada mes, recopilamos, analizamos y documentamos todas las ocurrencias relevantes relacionadas con los productores de bloques (Block Producers), incluyendo:</p>
+       <ul class="space-y-2 md:space-y-3 text-sm md:text-base text-gray-700 mb-4 md:mb-6">
+        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3 flex-shrink-0"></span> <span data-es="Fallos operativos" data-en="Operational failures">Fallos operativos</span></li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3 flex-shrink-0"></span> <span data-es="Pérdidas de bloques" data-en="Block losses">Pérdidas de bloques</span></li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3 flex-shrink-0"></span> <span data-es="Participación en testnet" data-en="Testnet participation">Participación en testnet</span></li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3 flex-shrink-0"></span> <span data-es="Servicios adicionales ofrecidos" data-en="Additional services offered">Servicios adicionales ofrecidos</span></li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-telos-purple rounded-full mr-3 flex-shrink-0"></span> <span data-es="Incumplimientos de reglas" data-en="Rule violations">Incumplimientos de reglas</span></li>
        </ul>
-       <p class="text-gray-700 leading-relaxed" data-es="Todo esto se refleja en nuestros cuatro reportes mensuales, disponibles para descarga:" data-en="All of this is reflected in our four monthly reports, available for download:">Todo esto se refleja en nuestros cuatro reportes mensuales, disponibles para descarga:</p>
+       <p class="text-sm md:text-base text-gray-700 leading-relaxed" data-es="Todo esto se refleja en nuestros cuatro reportes mensuales, disponibles para descarga:" data-en="All of this is reflected in our four monthly reports, available for download:">Todo esto se refleja en nuestros cuatro reportes mensuales, disponibles para descarga:</p>
       </div>
       <div>
-       <h4 class="text-2xl font-bold text-gray-800 mb-6" data-es="🧭 Nuestra misión" data-en="🧭 Our mission">🧭 Nuestra misión</h4>
-       <p class="text-gray-700 mb-6 leading-relaxed" data-es="No somos solo observadores. Somos quienes hacen cumplir las reglas. Nuestro sistema está diseñado para:" data-en="We are not just observers. We are the ones who enforce the rules. Our system is designed to:">No somos solo observadores. Somos quienes hacen cumplir las reglas. Nuestro sistema está diseñado para:</p>
-       <ul class="space-y-3 text-gray-700 mb-6">
-        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2"></span> <span data-es="Identificar desviaciones del comportamiento esperado de los productores de bloques" data-en="Identify deviations from expected behavior of block producers">Identificar desviaciones del comportamiento esperado de los productores de bloques</span></li>
-        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2"></span> <span data-es="Documentar con evidencia cada incumplimiento o irregularidad" data-en="Document with evidence each breach or irregularity">Documentar con evidencia cada incumplimiento o irregularidad</span></li>
-        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2"></span> <span data-es="Promover la transparencia y el cumplimiento dentro del ecosistema Telos" data-en="Promote transparency and compliance within the Telos ecosystem">Promover la transparencia y el cumplimiento dentro del ecosistema Telos</span></li>
-        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2"></span> <span data-es="Informar a la comunidad con reportes claros, públicos y verificables" data-en="Inform the community with clear, public and verifiable reports">Informar a la comunidad con reportes claros, públicos y verificables</span></li>
+       <h4 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6" data-es="🧭 Nuestra misión" data-en="🧭 Our mission">🧭 Nuestra misión</h4>
+       <p class="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed" data-es="No somos solo observadores. Somos quienes hacen cumplir las reglas. Nuestro sistema está diseñado para:" data-en="We are not just observers. We are the ones who enforce the rules. Our system is designed to:">No somos solo observadores. Somos quienes hacen cumplir las reglas. Nuestro sistema está diseñado para:</p>
+       <ul class="space-y-2 md:space-y-3 text-sm md:text-base text-gray-700 mb-4 md:mb-6">
+        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2 flex-shrink-0"></span> <span data-es="Identificar desviaciones del comportamiento esperado de los productores de bloques" data-en="Identify deviations from expected behavior of block producers">Identificar desviaciones del comportamiento esperado de los productores de bloques</span></li>
+        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2 flex-shrink-0"></span> <span data-es="Documentar con evidencia cada incumplimiento o irregularidad" data-en="Document with evidence each breach or irregularity">Documentar con evidencia cada incumplimiento o irregularidad</span></li>
+        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2 flex-shrink-0"></span> <span data-es="Promover la transparencia y el cumplimiento dentro del ecosistema Telos" data-en="Promote transparency and compliance within the Telos ecosystem">Promover la transparencia y el cumplimiento dentro del ecosistema Telos</span></li>
+        <li class="flex items-start"><span class="w-2 h-2 bg-telos-blue rounded-full mr-3 mt-2 flex-shrink-0"></span> <span data-es="Informar a la comunidad con reportes claros, públicos y verificables" data-en="Inform the community with clear, public and verifiable reports">Informar a la comunidad con reportes claros, públicos y verificables</span></li>
        </ul>
       </div>
      </div>
@@ -202,48 +202,48 @@
       <h2 class="text-4xl font-bold text-gray-800 mb-4" data-es="Reportes Mensuales Disponibles" data-en="Available Monthly Reports">Reportes Mensuales Disponibles</h2>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-es="Descarga los reportes más recientes con análisis detallado del desempeño de cada Block Producer" data-en="Download the latest reports with detailed analysis of each Block Producer's performance">Descarga los reportes más recientes con análisis detallado del desempeño de cada Block Producer</p>
      </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
-       <div class="flex items-start justify-between mb-6">
-        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
+      <div class="group bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+       <div class="flex items-start justify-between mb-4 md:mb-6">
+        <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+         <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
          </svg>
-        </div><span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Principal" data-en="Main">Principal</span>
+        </div><span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 md:px-3 py-1 rounded-full" data-es="Principal" data-en="Main">Principal</span>
        </div>
-       <h3 class="text-2xl font-bold text-gray-800 mb-3">Final Report</h3>
-       <p class="text-gray-600 mb-6 leading-relaxed" data-es="Reporte completo mensual con análisis exhaustivo de todos los Block Producers, incluyendo métricas de rendimiento y cumplimiento." data-en="Complete monthly report with comprehensive analysis of all Block Producers, including performance and compliance metrics.">Reporte completo mensual con análisis exhaustivo de todos los Block Producers, incluyendo métricas de rendimiento y cumplimiento.</p><button onclick="downloadFile('finalReport')" class="w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Reporte Principal" data-en="Download Main Report">Descargar Reporte Principal</span> </button>
+       <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Final Report</h3>
+       <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed" data-es="Reporte completo mensual con análisis exhaustivo de todos los Block Producers, incluyendo métricas de rendimiento y cumplimiento." data-en="Complete monthly report with comprehensive analysis of all Block Producers, including performance and compliance metrics.">Reporte completo mensual con análisis exhaustivo de todos los Block Producers, incluyendo métricas de rendimiento y cumplimiento.</p><button onclick="downloadFile('finalReport')" class="w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Reporte Principal" data-en="Download Main Report">Descargar Reporte Principal</span> </button>
       </div>
-      <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
-       <div class="flex items-start justify-between mb-6">
-        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+      <div class="group bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+       <div class="flex items-start justify-between mb-4 md:mb-6">
+        <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+         <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
          </svg>
-        </div><span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Crítico" data-en="Critical">Crítico</span>
+        </div><span class="bg-red-100 text-red-800 text-xs font-semibold px-2 md:px-3 py-1 rounded-full" data-es="Crítico" data-en="Critical">Crítico</span>
        </div>
-       <h3 class="text-2xl font-bold text-gray-800 mb-3">Blocks Lost Per Month</h3>
-       <p class="text-gray-600 mb-6 leading-relaxed" data-es="Análisis detallado de bloques perdidos por cada Block Producer, identificando patrones y causas de las interrupciones en la red." data-en="Detailed analysis of blocks lost by each Block Producer, identifying patterns and causes of network interruptions.">Análisis detallado de bloques perdidos por cada Block Producer, identificando patrones y causas de las interrupciones en la red.</p><button onclick="downloadFile('blocksLost')" class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Análisis de Bloques" data-en="Download Block Analysis">Descargar Análisis de Bloques</span> </button>
+       <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Blocks Lost Per Month</h3>
+       <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed" data-es="Análisis detallado de bloques perdidos por cada Block Producer, identificando patrones y causas de las interrupciones en la red." data-en="Detailed analysis of blocks lost by each Block Producer, identifying patterns and causes of network interruptions.">Análisis detallado de bloques perdidos por cada Block Producer, identificando patrones y causas de las interrupciones en la red.</p><button onclick="downloadFile('blocksLost')" class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Análisis de Bloques" data-en="Download Block Analysis">Descargar Análisis de Bloques</span> </button>
       </div>
      </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
-       <div class="flex items-start justify-between mb-6">
-        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+      <div class="group bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+       <div class="flex items-start justify-between mb-4 md:mb-6">
+        <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+         <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
          </svg>
-        </div><span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Testnet" data-en="Testnet">Testnet</span>
+        </div><span class="bg-green-100 text-green-800 text-xs font-semibold px-2 md:px-3 py-1 rounded-full" data-es="Testnet" data-en="Testnet">Testnet</span>
        </div>
-       <h3 class="text-2xl font-bold text-gray-800 mb-3">Book of Off Testnet</h3>
-       <p class="text-gray-600 mb-6 leading-relaxed" data-es="Registro completo de actividades y participación de los Block Producers en la red de pruebas, evaluando su compromiso con el desarrollo." data-en="Complete record of Block Producer activities and participation in the test network, evaluating their commitment to development.">Registro completo de actividades y participación de los Block Producers en la red de pruebas, evaluando su compromiso con el desarrollo.</p><button onclick="downloadFile('testnetBook')" class="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Registro Testnet" data-en="Download Testnet Record">Descargar Registro Testnet</span> </button>
+       <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Book of Off Testnet</h3>
+       <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed" data-es="Registro completo de actividades y participación de los Block Producers en la red de pruebas, evaluando su compromiso con el desarrollo." data-en="Complete record of Block Producer activities and participation in the test network, evaluating their commitment to development.">Registro completo de actividades y participación de los Block Producers en la red de pruebas, evaluando su compromiso con el desarrollo.</p><button onclick="downloadFile('testnetBook')" class="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Registro Testnet" data-en="Download Testnet Record">Descargar Registro Testnet</span> </button>
       </div>
-      <div class="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
-       <div class="flex items-start justify-between mb-6">
-        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      <div class="group bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100">
+       <div class="flex items-start justify-between mb-4 md:mb-6">
+        <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+         <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
          </svg>
-        </div><span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full" data-es="Servicios" data-en="Services">Servicios</span>
+        </div><span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2 md:px-3 py-1 rounded-full" data-es="Servicios" data-en="Services">Servicios</span>
        </div>
-       <h3 class="text-2xl font-bold text-gray-800 mb-3">Additional Services</h3>
-       <p class="text-gray-600 mb-6 leading-relaxed" data-es="Evaluación de servicios adicionales proporcionados por los Block Producers, incluyendo APIs, herramientas y contribuciones al ecosistema." data-en="Evaluation of additional services provided by Block Producers, including APIs, tools and contributions to the ecosystem.">Evaluación de servicios adicionales proporcionados por los Block Producers, incluyendo APIs, herramientas y contribuciones al ecosistema.</p><button onclick="downloadFile('additionalServices')" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Servicios Adicionales" data-en="Download Additional Services">Descargar Servicios Adicionales</span> </button>
+       <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Additional Services</h3>
+       <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed" data-es="Evaluación de servicios adicionales proporcionados por los Block Producers, incluyendo APIs, herramientas y contribuciones al ecosistema." data-en="Evaluation of additional services provided by Block Producers, including APIs, tools and contributions to the ecosystem.">Evaluación de servicios adicionales proporcionados por los Block Producers, incluyendo APIs, herramientas y contribuciones al ecosistema.</p><button onclick="downloadFile('additionalServices')" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> <span data-es="Descargar Servicios Adicionales" data-en="Download Additional Services">Descargar Servicios Adicionales</span> </button>
       </div>
      </div>
     </div><!-- Last Update Section -->
@@ -486,38 +486,38 @@
     </div>
    </section>
   </main>
-  <footer class="bg-gray-800 text-white py-12 mt-16">
-   <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-     <div>
-      <h3 class="text-xl font-bold mb-4">Compliance BP Telos</h3>
-      <p class="text-gray-300" data-es="Manteniendo la transparencia y calidad en el ecosistema Telos a través de reportes mensuales detallados." data-en="Maintaining transparency and quality in the Telos ecosystem through detailed monthly reports.">Manteniendo la transparencia y calidad en el ecosistema Telos a través de reportes mensuales detallados.</p>
+  <footer class="bg-gray-800 text-white py-8 md:py-12 mt-12 md:mt-16">
+   <div class="container mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+     <div class="text-center md:text-left">
+      <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Compliance BP Telos</h3>
+      <p class="text-sm md:text-base text-gray-300 leading-relaxed" data-es="Manteniendo la transparencia y calidad en el ecosistema Telos a través de reportes mensuales detallados." data-en="Maintaining transparency and quality in the Telos ecosystem through detailed monthly reports.">Manteniendo la transparencia y calidad en el ecosistema Telos a través de reportes mensuales detallados.</p>
      </div>
-     <div>
-      <h3 class="text-xl font-bold mb-4" data-es="Enlaces Útiles" data-en="Useful Links">Enlaces Útiles</h3>
-      <ul class="space-y-2 text-gray-300">
+     <div class="text-center md:text-left">
+      <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4" data-es="Enlaces Útiles" data-en="Useful Links">Enlaces Útiles</h3>
+      <ul class="space-y-2 text-sm md:text-base text-gray-300">
        <li><a href="https://telos.net" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Telos.net</a></li>
        <li><a href="https://teloscan.io" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">TelosScan</a></li>
        <li><a href="https://docs.telos.net" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" data-es="Documentación" data-en="Documentation">Documentación</a></li>
       </ul>
      </div>
-     <div>
-      <h3 class="text-xl font-bold mb-4" data-es="Contacto" data-en="Contact">Contacto</h3>
-      <p class="text-gray-300 mb-4" data-es="Para consultas sobre los reportes o sugerencias de mejora:" data-en="For inquiries about reports or improvement suggestions:">Para consultas sobre los reportes o sugerencias de mejora:</p>
-      <ul class="space-y-2 text-gray-300">
-       <li class="flex items-center">
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+     <div class="text-center md:text-left">
+      <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4" data-es="Contacto" data-en="Contact">Contacto</h3>
+      <p class="text-sm md:text-base text-gray-300 mb-3 md:mb-4 leading-relaxed" data-es="Para consultas sobre los reportes o sugerencias de mejora:" data-en="For inquiries about reports or improvement suggestions:">Para consultas sobre los reportes o sugerencias de mejora:</p>
+      <ul class="space-y-2 text-sm md:text-base text-gray-300">
+       <li class="flex items-center justify-center md:justify-start">
+        <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg><span>+584147825840</span></li>
-       <li class="flex items-center">
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+       <li class="flex items-center justify-center md:justify-start">
+        <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
         </svg><span>Telegram: @marcelo182</span></li>
-       <li class="flex items-center">
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+       <li class="flex items-center justify-center md:justify-start">
+        <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
         </svg><a href="https://danielmarcelo.info" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">danielmarcelo.info</a></li>
       </ul>
      </div>
     </div>
-    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+    <div class="border-t border-gray-700 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-sm md:text-base text-gray-300">
      <p data-es="© 2025 Compliance BP Telos. Todos los derechos reservados." data-en="© 2025 Compliance BP Telos. All rights reserved.">© 2025 Compliance BP Telos. Todos los derechos reservados.</p>
     </div>
    </div>
@@ -549,6 +549,9 @@
             currentLanguage = lang;
             localStorage.setItem('telosLanguage', lang);
             
+            // Cerrar menú móvil si está abierto
+            document.getElementById('mobileMenu').classList.add('hidden');
+            
             // Actualizar todos los elementos con data-es y data-en
             const elements = document.querySelectorAll('[data-es][data-en]');
             elements.forEach(element => {
@@ -562,7 +565,7 @@
             // Actualizar etiquetas del gráfico si existe
             updateChartLabels();
             
-            // Actualizar botones de idioma
+            // Actualizar botones de idioma (desktop)
             document.getElementById('btnEs').classList.toggle('bg-white', lang === 'es');
             document.getElementById('btnEs').classList.toggle('bg-opacity-20', lang === 'es');
             document.getElementById('btnEs').classList.toggle('text-telos-dark', lang === 'es');
@@ -570,6 +573,15 @@
             document.getElementById('btnEn').classList.toggle('bg-white', lang === 'en');
             document.getElementById('btnEn').classList.toggle('bg-opacity-20', lang === 'en');
             document.getElementById('btnEn').classList.toggle('text-telos-dark', lang === 'en');
+            
+            // Actualizar botones de idioma (móvil)
+            document.getElementById('btnEsMobile').classList.toggle('bg-white', lang === 'es');
+            document.getElementById('btnEsMobile').classList.toggle('bg-opacity-20', lang === 'es');
+            document.getElementById('btnEsMobile').classList.toggle('text-telos-dark', lang === 'es');
+            
+            document.getElementById('btnEnMobile').classList.toggle('bg-white', lang === 'en');
+            document.getElementById('btnEnMobile').classList.toggle('bg-opacity-20', lang === 'en');
+            document.getElementById('btnEnMobile').classList.toggle('text-telos-dark', lang === 'en');
         }
 
         // Navegación entre secciones
@@ -1343,5 +1355,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996b0a8e44c2492b',t:'MTc2MTgyODY1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996c85410501492b',t:'MTc2MTg0NDE2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
