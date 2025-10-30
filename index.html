@@ -550,7 +550,10 @@
             localStorage.setItem('telosLanguage', lang);
             
             // Cerrar menú móvil si está abierto
-            document.getElementById('mobileMenu').classList.add('hidden');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
             
             // Actualizar todos los elementos con data-es y data-en
             const elements = document.querySelectorAll('[data-es][data-en]');
@@ -565,44 +568,51 @@
             // Actualizar etiquetas del gráfico si existe
             updateChartLabels();
             
-            // Actualizar botones de idioma (desktop)
-            updateLanguageButtons(lang);
-            
-            // Actualizar botones de idioma (móvil)
-            updateMobileLanguageButtons(lang);
+            // Actualizar botones de idioma (desktop y móvil)
+            updateLanguageButtons();
         }
 
-        // Función para actualizar botones de idioma desktop
-        function updateLanguageButtons(lang) {
+        // Función para actualizar botones de idioma (desktop y móvil)
+        function updateLanguageButtons() {
+            // Botones desktop
             const btnEs = document.getElementById('btnEs');
             const btnEn = document.getElementById('btnEn');
             
-            // Limpiar todas las clases de estilo
-            btnEs.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
-            btnEn.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
-            
-            // Aplicar estilo al botón activo
-            if (lang === 'es') {
-                btnEs.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
-            } else {
-                btnEn.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
-            }
-        }
-
-        // Función para actualizar botones de idioma móvil
-        function updateMobileLanguageButtons(lang) {
+            // Botones móvil
             const btnEsMobile = document.getElementById('btnEsMobile');
             const btnEnMobile = document.getElementById('btnEnMobile');
             
-            // Limpiar todas las clases de estilo
-            btnEsMobile.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
-            btnEnMobile.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            // Limpiar todas las clases de estilo de todos los botones
+            [btnEs, btnEn, btnEsMobile, btnEnMobile].forEach(btn => {
+                if (btn) {
+                    btn.classList.remove('bg-white', 'bg-opacity-20', 'text-white', 'font-bold');
+                    btn.classList.add('text-white');
+                }
+            });
             
-            // Aplicar estilo al botón activo
-            if (lang === 'es') {
-                btnEsMobile.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            // Aplicar estilo al botón activo según el idioma
+            if (currentLanguage === 'es') {
+                if (btnEs) {
+                    btnEs.classList.add('bg-white', 'bg-opacity-20', 'font-bold');
+                    btnEs.classList.remove('text-white');
+                    btnEs.classList.add('text-telos-dark');
+                }
+                if (btnEsMobile) {
+                    btnEsMobile.classList.add('bg-white', 'bg-opacity-20', 'font-bold');
+                    btnEsMobile.classList.remove('text-white');
+                    btnEsMobile.classList.add('text-telos-dark');
+                }
             } else {
-                btnEnMobile.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
+                if (btnEn) {
+                    btnEn.classList.add('bg-white', 'bg-opacity-20', 'font-bold');
+                    btnEn.classList.remove('text-white');
+                    btnEn.classList.add('text-telos-dark');
+                }
+                if (btnEnMobile) {
+                    btnEnMobile.classList.add('bg-white', 'bg-opacity-20', 'font-bold');
+                    btnEnMobile.classList.remove('text-white');
+                    btnEnMobile.classList.add('text-telos-dark');
+                }
             }
         }
 
@@ -1377,5 +1387,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996c8ce7b2f2492b',t:'MTc2MTg0NDQ4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996c9304e5b7492b',t:'MTc2MTg0NDczMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
