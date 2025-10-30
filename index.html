@@ -539,7 +539,7 @@
         let isAuthenticated = false;
 
         // Sistema de idiomas
-        let currentLanguage = 'es';
+        let currentLanguage = 'en';
 
         // Modo de edición
         let editMode = false;
@@ -566,22 +566,44 @@
             updateChartLabels();
             
             // Actualizar botones de idioma (desktop)
-            document.getElementById('btnEs').classList.toggle('bg-white', lang === 'es');
-            document.getElementById('btnEs').classList.toggle('bg-opacity-20', lang === 'es');
-            document.getElementById('btnEs').classList.toggle('text-telos-dark', lang === 'es');
-            
-            document.getElementById('btnEn').classList.toggle('bg-white', lang === 'en');
-            document.getElementById('btnEn').classList.toggle('bg-opacity-20', lang === 'en');
-            document.getElementById('btnEn').classList.toggle('text-telos-dark', lang === 'en');
+            updateLanguageButtons(lang);
             
             // Actualizar botones de idioma (móvil)
-            document.getElementById('btnEsMobile').classList.toggle('bg-white', lang === 'es');
-            document.getElementById('btnEsMobile').classList.toggle('bg-opacity-20', lang === 'es');
-            document.getElementById('btnEsMobile').classList.toggle('text-telos-dark', lang === 'es');
+            updateMobileLanguageButtons(lang);
+        }
+
+        // Función para actualizar botones de idioma desktop
+        function updateLanguageButtons(lang) {
+            const btnEs = document.getElementById('btnEs');
+            const btnEn = document.getElementById('btnEn');
             
-            document.getElementById('btnEnMobile').classList.toggle('bg-white', lang === 'en');
-            document.getElementById('btnEnMobile').classList.toggle('bg-opacity-20', lang === 'en');
-            document.getElementById('btnEnMobile').classList.toggle('text-telos-dark', lang === 'en');
+            // Limpiar todas las clases de estilo
+            btnEs.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            btnEn.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            
+            // Aplicar estilo al botón activo
+            if (lang === 'es') {
+                btnEs.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            } else {
+                btnEn.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            }
+        }
+
+        // Función para actualizar botones de idioma móvil
+        function updateMobileLanguageButtons(lang) {
+            const btnEsMobile = document.getElementById('btnEsMobile');
+            const btnEnMobile = document.getElementById('btnEnMobile');
+            
+            // Limpiar todas las clases de estilo
+            btnEsMobile.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            btnEnMobile.classList.remove('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            
+            // Aplicar estilo al botón activo
+            if (lang === 'es') {
+                btnEsMobile.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            } else {
+                btnEnMobile.classList.add('bg-white', 'bg-opacity-20', 'text-telos-dark');
+            }
         }
 
         // Navegación entre secciones
@@ -1085,7 +1107,7 @@
             if (savedLanguage) {
                 changeLanguage(savedLanguage);
             } else {
-                changeLanguage('es'); // Idioma por defecto
+                changeLanguage('en'); // Idioma por defecto
             }
             
             // Cargar fecha de última actualización guardada
@@ -1355,5 +1377,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996c85410501492b',t:'MTc2MTg0NDE2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996c8ce7b2f2492b',t:'MTc2MTg0NDQ4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
