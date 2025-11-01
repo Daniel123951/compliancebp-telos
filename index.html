@@ -636,6 +636,8 @@
                     // Actualizar fecha de última actualización
                     if (content.lastUpdate) {
                         updateLastUpdateDisplay(content.lastUpdate.month, content.lastUpdate.year);
+                        // También guardar localmente para sincronización
+                        localStorage.setItem('telosLastUpdate', JSON.stringify(content.lastUpdate));
                         console.log('Fecha de actualización cargada:', content.lastUpdate);
                     }
                     
@@ -1364,7 +1366,7 @@
                     inactive: ['KainosBP', 'TelosGreen', 'Big Iron', 'Telos Korea', 'TheTeloscope'],
                     p2p: ['CALEOS', 'Infinitybloc'],
                     json: ['Greymass', 'KainosBP'],
-                    blockHistory: ['CALEOS', 'Infinitybloc', 'Greymass', 'KainosBP', 'Persiantelos', 'Swapsicledex', 'Big Iron', 'EOSArgentina', 'EOSAuthority', 'Telos Korea', 'Telos India', 'Creativblock', 'Mosaiblocks', 'ZKERA.FI', 'SNTNL', 'Telos Kitchen', 'Open republic', 'TheTeloscope', 'Primarch Technologies', 'LedgerWise', 'A-DEX BP', 'Blockbastrds'],
+                    blockHistory: ['CALEOS', 'Infinitybloc', 'Greymass', 'KainosBP', 'Persiantelos', 'Swapsicledx', 'Big Iron', 'EOSArgentina', 'EOSAuthority', 'Telos Korea', 'Telos India', 'Creativblock', 'Mosaiblocks', 'ZKERA.FI', 'SNTNL', 'Telos Kitchen', 'Open republic', 'TheTeloscope', 'Primarch Technologies', 'LedgerWise', 'A-DEX BP', 'Blockbastrds'],
                     cpu: ['OrbitalBlock', 'Persiantelos', 'Creativeblock', 'Katalyotelos', 'Telos India']
                 };
             }
@@ -1484,23 +1486,28 @@
                 changeLanguage('en'); // Idioma por defecto
             }
             
-            // Cargar fecha de última actualización guardada
-            const savedDate = localStorage.getItem('telosLastUpdate');
-            if (savedDate) {
-                const dateData = JSON.parse(savedDate);
-                updateLastUpdateDisplay(dateData.month, dateData.year);
+            // Cargar fecha de última actualización desde GitHub o localStorage
+            // Prioridad: GitHub > localStorage > Fecha por defecto
+            let lastUpdateLoaded = false;
+            
+            if (githubData && githubData.lastUpdate) {
+                updateLastUpdateDisplay(githubData.lastUpdate.month, githubData.lastUpdate.year);
+                lastUpdateLoaded = true;
             } else {
-                // Usar fecha actual como fallback
-                const currentDate = new Date();
-                const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-                const monthNamesEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                
+                const savedDate = localStorage.getItem('telosLastUpdate');
+                if (savedDate) {
+                    const dateData = JSON.parse(savedDate);
+                    updateLastUpdateDisplay(dateData.month, dateData.year);
+                    lastUpdateLoaded = true;
+                }
+            }
+            
+            // Solo usar fecha actual si NO hay datos guardados
+            if (!lastUpdateLoaded) {
                 const updateElement = document.getElementById('lastUpdate');
-                updateElement.setAttribute('data-es', `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
-                updateElement.setAttribute('data-en', `${monthNamesEn[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
-                updateElement.textContent = currentLanguage === 'es' ? 
-                    `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}` : 
-                    `${monthNamesEn[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+                updateElement.setAttribute('data-es', 'Diciembre 2024');
+                updateElement.setAttribute('data-en', 'December 2024');
+                updateElement.textContent = currentLanguage === 'es' ? 'Diciembre 2024' : 'December 2024';
             }
 
             // Cargar reporte rápido actual
@@ -1728,5 +1735,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997c87e8a4be492b',t:'MTc2MjAxMjA0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997cb863a698492b',t:'MTc2MjAxNDAzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
