@@ -1,14 +1,14 @@
 {
   "downloadUrls": {
-    "finalReport": "#",
-    "blocksLost": "#",
-    "testnetBook": "#",
-    "additionalServices": "#"
+    "finalReport": "https://drive.google.com/uc?export=download&id=1UuvOEyXTtRol95ouCeGFyAY6SPa-skI0",
+    "blocksLost": "https://drive.google.com/uc?export=download&id=1zVdAQn84BCvONE5GnBAmo9z_eU3UakoJ",
+    "testnetBook": "https://drive.google.com/uc?export=download&id=1yCLHkFdFsq1srZuSkDDjqB9yAhBBtUEQ",
+    "additionalServices": "https://drive.google.com/uc?export=download&id=1nVqgNiL9jDrY-Tgeen_9WF3bNyOh0sre"
   },
   "historicalReports": [],
   "lastUpdate": {
     "month": "Octubre",
     "year": "2025"
   },
-  "lastModified": "2025-11-01T16:10:23.861Z"
+  "lastModified": "2025-11-01T16:11:03.674Z"
 }
