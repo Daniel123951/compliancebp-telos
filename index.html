@@ -630,7 +630,9 @@
                     // Cargar reporte rápido si existe
                     if (content.quickReport) {
                         localStorage.setItem('telosQuickReport', JSON.stringify(content.quickReport));
-                        console.log('Reporte rápido cargado');
+                        console.log('Reporte rápido cargado desde GitHub:', content.quickReport);
+                    } else {
+                        console.log('No hay reporte rápido en GitHub');
                     }
                     
                     // Actualizar fecha de última actualización
@@ -1356,23 +1358,15 @@
             
             if (savedQuickReport) {
                 quickReportData = JSON.parse(savedQuickReport);
+                console.log('Reporte rápido cargado desde localStorage:', quickReportData);
+                // Mostrar el reporte
+                displayQuickReport(quickReportData);
+            } else {
+                console.log('No hay reporte rápido guardado - mostrando placeholder');
+                // Si no hay datos, mostrar placeholder vacío
+                document.getElementById('reportPlaceholder').classList.remove('hidden');
+                document.getElementById('reportResults').classList.add('hidden');
             }
-            
-            // Si no hay datos guardados, usar datos de ejemplo
-            if (!quickReportData) {
-                quickReportData = {
-                    month: 'June',
-                    year: '2025',
-                    inactive: ['KainosBP', 'TelosGreen', 'Big Iron', 'Telos Korea', 'TheTeloscope'],
-                    p2p: ['CALEOS', 'Infinitybloc'],
-                    json: ['Greymass', 'KainosBP'],
-                    blockHistory: ['CALEOS', 'Infinitybloc', 'Greymass', 'KainosBP', 'Persiantelos', 'Swapsicledx', 'Big Iron', 'EOSArgentina', 'EOSAuthority', 'Telos Korea', 'Telos India', 'Creativblock', 'Mosaiblocks', 'ZKERA.FI', 'SNTNL', 'Telos Kitchen', 'Open republic', 'TheTeloscope', 'Primarch Technologies', 'LedgerWise', 'A-DEX BP', 'Blockbastrds'],
-                    cpu: ['OrbitalBlock', 'Persiantelos', 'Creativeblock', 'Katalyotelos', 'Telos India']
-                };
-            }
-            
-            // Mostrar el reporte
-            displayQuickReport(quickReportData);
         }
 
         // Mostrar reporte rápido
@@ -1452,7 +1446,9 @@
             }
             
             // SIEMPRE intentar cargar datos desde GitHub primero
-            console.log('Intentando cargar datos desde GitHub...');
+            console.log('🔄 Intentando cargar datos desde GitHub...');
+            console.log('📁 Repositorio:', `${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`);
+            console.log('📄 Archivo:', GITHUB_CONFIG.dataFile);
             const githubData = await loadDataFromGitHub();
             
             // Si no se pudieron cargar desde GitHub, usar datos locales como fallback
@@ -1735,5 +1731,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997cb863a698492b',t:'MTc2MjAxNDAzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997ccb549165492b',t:'MTc2MjAxNDgxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
