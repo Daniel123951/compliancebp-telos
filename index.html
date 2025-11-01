@@ -621,20 +621,35 @@
                     // Actualizar datos locales SOLO si existen en GitHub
                     if (content.downloadUrls) {
                         downloadUrls = { ...downloadUrls, ...content.downloadUrls };
-                        console.log('URLs de descarga actualizadas:', downloadUrls);
+                        console.log('✅ URLs de descarga actualizadas:', downloadUrls);
                     }
                     
                     if (content.historicalReports) {
-                        historicalReports = content.historicalReports;
-                        console.log('Reportes históricos cargados:', historicalReports.length);
+                        // Limpiar y validar reportes históricos
+                        historicalReports = content.historicalReports
+                            .filter(report => report && report.month && report.year && report.type && report.url)
+                            .map(report => ({
+                                ...report,
+                                id: report.id && !isNaN(report.id) ? report.id : Date.now() + Math.random()
+                            }));
+                        console.log('✅ Reportes históricos cargados y validados:', historicalReports.length);
                     }
                     
                     // Cargar reporte rápido si existe
                     if (content.quickReport) {
-                        localStorage.setItem('telosQuickReport', JSON.stringify(content.quickReport));
-                        console.log('Reporte rápido cargado desde GitHub:', content.quickReport);
+                        try {
+                            localStorage.setItem('telosQuickReport', JSON.stringify(content.quickReport));
+                            console.log('✅ Reporte rápido cargado desde GitHub:', content.quickReport);
+                            
+                            // Si estamos en la sección de reporte rápido, actualizar inmediatamente
+                            if (!document.getElementById('quickReportSection').classList.contains('hidden')) {
+                                displayQuickReport(content.quickReport);
+                            }
+                        } catch (error) {
+                            console.error('❌ Error guardando reporte rápido desde GitHub:', error);
+                        }
                     } else {
-                        console.log('No hay reporte rápido en GitHub');
+                        console.log('ℹ️ No hay reporte rápido en GitHub - usando datos locales o ejemplo');
                     }
                     
                     // Actualizar fecha de última actualización
@@ -642,7 +657,11 @@
                         updateLastUpdateDisplay(content.lastUpdate.month, content.lastUpdate.year);
                         // También guardar localmente para sincronización
                         localStorage.setItem('telosLastUpdate', JSON.stringify(content.lastUpdate));
-                        console.log('Fecha de actualización cargada:', content.lastUpdate);
+                        console.log('✅ Fecha de actualización cargada:', content.lastUpdate);
+                    } else {
+                        // Si no hay lastUpdate en GitHub, usar Diciembre 2024 como default
+                        updateLastUpdateDisplay('Diciembre', '2024');
+                        console.log('ℹ️ Usando fecha por defecto: Diciembre 2024');
                     }
                     
                     console.log('✅ Datos cargados desde GitHub exitosamente');
@@ -1390,25 +1409,45 @@
 
         // Cargar reporte rápido desde GitHub o datos locales
         function loadQuickReport() {
+            console.log('🔄 Cargando reporte rápido...');
+            
             // Cargar datos del reporte rápido guardado
             const savedQuickReport = localStorage.getItem('telosQuickReport');
             let quickReportData = null;
             
             if (savedQuickReport) {
-                quickReportData = JSON.parse(savedQuickReport);
-                console.log('Reporte rápido cargado desde localStorage:', quickReportData);
-                // Mostrar el reporte
-                displayQuickReport(quickReportData);
-            } else {
-                console.log('No hay reporte rápido guardado - mostrando placeholder');
-                // Si no hay datos, mostrar placeholder vacío
-                document.getElementById('reportPlaceholder').classList.remove('hidden');
-                document.getElementById('reportResults').classList.add('hidden');
+                try {
+                    quickReportData = JSON.parse(savedQuickReport);
+                    console.log('✅ Reporte rápido cargado desde localStorage:', quickReportData);
+                    // Mostrar el reporte
+                    displayQuickReport(quickReportData);
+                    return;
+                } catch (error) {
+                    console.error('❌ Error parseando reporte rápido desde localStorage:', error);
+                    localStorage.removeItem('telosQuickReport'); // Limpiar datos corruptos
+                }
             }
+            
+            // Si no hay datos válidos, crear datos de ejemplo para mostrar
+            console.log('📊 No hay reporte rápido guardado - creando datos de ejemplo');
+            const exampleData = {
+                month: 'Diciembre',
+                year: 2024,
+                inactive: ['KainosBP', 'TelosGreen', 'Big Iron'],
+                p2p: ['BP1', 'BP2'],
+                json: ['BP3', 'BP4'],
+                blockHistory: ['CALEOS', 'Infinitybloc', 'Greymass'],
+                cpu: ['OrbitalBlock', 'Persiantelos'],
+                isExample: true // Marcar como datos de ejemplo
+            };
+            
+            displayQuickReport(exampleData);
         }
 
         // Mostrar reporte rápido
         function displayQuickReport(data) {
+            console.log('📊 Mostrando reporte rápido:', data);
+            
             // Mapeo bidireccional de meses
             const monthTranslations = {
                 // Español a Inglés
@@ -1432,9 +1471,14 @@
             
             const displayMonth = translateMonth(data.month);
 
-            const titleText = currentLanguage === 'es' ? 
+            let titleText = currentLanguage === 'es' ? 
                 `Resumen del rendimiento mensual de Block Producers para ${displayMonth} ${data.year}` :
                 `Summary of the monthly performance of Block Producers for ${displayMonth} ${data.year}`;
+            
+            // Agregar indicador si son datos de ejemplo
+            if (data.isExample) {
+                titleText += currentLanguage === 'es' ? ' (Datos de Ejemplo)' : ' (Example Data)';
+            }
             
             const titleElement = document.getElementById('reportTitle');
             titleElement.textContent = titleText;
@@ -1474,12 +1518,23 @@
                 data.cpu.map(bp => `<span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
                 `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay problemas de rendimiento CPU reportados' : 'No CPU performance issues reported'}</p>`;
 
-            // Crear gráfico
-            createPerformanceChart(data.inactive.length, data.p2p.length, data.json.length, data.blockHistory.length, data.cpu.length);
+            // Crear gráfico con manejo de errores
+            try {
+                createPerformanceChart(data.inactive.length, data.p2p.length, data.json.length, data.blockHistory.length, data.cpu.length);
+                console.log('✅ Gráfico creado exitosamente');
+            } catch (error) {
+                console.error('❌ Error creando gráfico:', error);
+                // Ocultar el canvas si hay error
+                const chartCanvas = document.getElementById('performanceChart');
+                if (chartCanvas) {
+                    chartCanvas.style.display = 'none';
+                }
+            }
 
             // Mostrar resultados
             document.getElementById('reportPlaceholder').classList.add('hidden');
             document.getElementById('reportResults').classList.remove('hidden');
+            console.log('✅ Reporte rápido mostrado correctamente');
         }
 
         // Cargar datos guardados al iniciar
@@ -1628,11 +1683,28 @@
 
         // Crear gráfico de rendimiento
         function createPerformanceChart(inactive, p2pInactive, jsonInactive, blockIssues, cpuIssues) {
-            const ctx = document.getElementById('performanceChart').getContext('2d');
+            // Verificar que Chart.js esté disponible
+            if (typeof Chart === 'undefined') {
+                console.error('❌ Chart.js no está disponible');
+                return;
+            }
+            
+            const chartCanvas = document.getElementById('performanceChart');
+            if (!chartCanvas) {
+                console.error('❌ Canvas del gráfico no encontrado');
+                return;
+            }
+            
+            const ctx = chartCanvas.getContext('2d');
+            if (!ctx) {
+                console.error('❌ No se pudo obtener contexto 2D del canvas');
+                return;
+            }
             
             // Destruir gráfico anterior si existe
             if (performanceChart) {
                 performanceChart.destroy();
+                performanceChart = null;
             }
 
             const labels = currentLanguage === 'es' ? 
@@ -1689,6 +1761,10 @@
                         }
                     }
                 }
+            });
+            
+            console.log('✅ Gráfico Chart.js creado exitosamente con datos:', {
+                inactive, p2pInactive, jsonInactive, blockIssues, cpuIssues
             });
         }
 
@@ -1781,5 +1857,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997d48d4b272492b',t:'MTc2MjAxOTk1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997e6a26876ba566',t:'MTc2MjAzMTgwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
