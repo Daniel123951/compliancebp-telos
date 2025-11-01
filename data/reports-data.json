@@ -40,5 +40,55 @@
     }
   ],
   "lastUpdate": null,
-  "lastModified": "2025-11-01T17:43:42.074Z"
+  "lastModified": "2025-11-01T21:25:57.140Z",
+  "quickReport": {
+    "month": "October",
+    "year": "2025",
+    "inactive": [
+      "KAINOSBP",
+      "BIGIRONBPTEX",
+      "SOUTHAFRICA",
+      "THETELOSCOPE",
+      "ORBITALBLOCK",
+      "BP.ANY SMARTELOS"
+    ],
+    "p2p": [
+      "THETELOSCOPE",
+      "BP.ANY",
+      "SMARTELOS"
+    ],
+    "json": [
+      "THETELOSCOPE",
+      "BP.ANY",
+      "SMARTELOS"
+    ],
+    "blockHistory": [
+      "CALEOS",
+      "INFINITYBLOC",
+      "TELOS MADRID",
+      "KAINOSBP",
+      "PERSIANTELOS",
+      "SWAPSICLE",
+      "BIGIRONBPTEX",
+      "TELOS INDIABP",
+      "EOSARGENTINA",
+      "EOSAUTHORITY",
+      "MOSAICBLOCKS",
+      "SOUTHAFRICA",
+      "SENTNL",
+      "THETELOSCOPE",
+      "LEDGERWISE",
+      "TELOS KITCHEN",
+      "A-DEXBP",
+      "ORBITALBLOCK",
+      "TOTALTELOSBP",
+      "BP.ANY",
+      "SMARTELOS"
+    ],
+    "cpu": [
+      "KATALYOTELOS",
+      "VERADOX"
+    ],
+    "lastModified": "2025-11-01T21:25:56.265Z"
+  }
 }
