@@ -279,11 +279,11 @@
    <section id="quickReportSection" class="hidden fade-in">
     <div class="text-center mb-12">
      <h2 class="text-4xl font-bold text-gray-800 mb-6" data-es="Reporte Rápido de Block Producers" data-en="Quick Block Producers Report">Reporte Rápido de Block Producers</h2>
-     <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-es="Genera un resumen visual del rendimiento mensual de los Block Producers con gráficos interactivos." data-en="Generate a visual summary of monthly Block Producer performance with interactive charts.">Genera un resumen visual del rendimiento mensual de los Block Producers con gráficos interactivos.</p>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-es="Resumen visual del rendimiento mensual de los Block Producers con gráficos interactivos." data-en="Visual summary of monthly Block Producer performance with interactive charts.">Resumen visual del rendimiento mensual de los Block Producers con gráficos interactivos.</p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Formulario de entrada -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Formulario de entrada (solo admin) -->
      <div id="reportFormSection" class="bg-white rounded-xl shadow-lg p-8 hidden">
-      <h3 class="text-2xl font-bold text-gray-800 mb-6" data-es="Datos del Reporte" data-en="Report Data">Datos del Reporte</h3>
+      <h3 class="text-2xl font-bold text-gray-800 mb-6" data-es="Actualizar Reporte Mensual" data-en="Update Monthly Report">Actualizar Reporte Mensual</h3>
       <form id="quickReportForm" class="space-y-6">
        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div><label for="reportMonth" class="block text-sm font-medium text-gray-700 mb-2" data-es="Mes del Reporte" data-en="Report Month">Mes del Reporte</label> <select id="reportMonth" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-telos-purple focus:border-transparent"> <option value="January" data-es="Enero" data-en="January">Enero</option> <option value="February" data-es="Febrero" data-en="February">Febrero</option> <option value="March" data-es="Marzo" data-en="March">Marzo</option> <option value="April" data-es="Abril" data-en="April">Abril</option> <option value="May" data-es="Mayo" data-en="May">Mayo</option> <option value="June" data-es="Junio" data-en="June" selected>Junio</option> <option value="July" data-es="Julio" data-en="July">Julio</option> <option value="August" data-es="Agosto" data-en="August">Agosto</option> <option value="September" data-es="Septiembre" data-en="September">Septiembre</option> <option value="October" data-es="Octubre" data-en="October">Octubre</option> <option value="November" data-es="Noviembre" data-en="November">Noviembre</option> <option value="December" data-es="Diciembre" data-en="December">Diciembre</option> </select>
@@ -305,14 +305,14 @@
        </div>
        <div><label for="cpuPerformance" class="block text-sm font-medium text-gray-700 mb-2" data-es="Rendimiento CPU (> 500 μs)" data-en="CPU Performance (> 500 μs)">Rendimiento CPU (&gt; 500 μs)</label> <textarea id="cpuPerformance" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-telos-purple focus:border-transparent" placeholder="OrbitalBlock, Persiantelos, Creativeblock, Katalyotelos, Telos India"></textarea>
         <p class="text-sm text-gray-500 mt-1" data-es="Block Producers con rendimiento CPU deficiente" data-en="Block Producers with poor CPU performance">Block Producers con rendimiento CPU deficiente</p>
-       </div><button type="submit" class="w-full bg-gradient-to-r from-telos-purple to-telos-blue hover:from-purple-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"> <span data-es="Generar Reporte Visual" data-en="Generate Visual Report">Generar Reporte Visual</span> </button>
+       </div><button type="submit" class="w-full bg-gradient-to-r from-telos-purple to-telos-blue hover:from-purple-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"> <span data-es="Actualizar Reporte Oficial" data-en="Update Official Report">Actualizar Reporte Oficial</span> </button>
       </form>
      </div><!-- Área de resultados -->
      <div id="reportResultsSection" class="bg-white rounded-xl shadow-lg p-8 lg:col-span-2">
       <div id="reportResults" class="hidden">
        <div class="text-center mb-6">
         <h3 id="reportTitle" class="text-2xl font-bold text-gray-800 mb-2" data-es="Resumen del rendimiento mensual de Block Producers para Junio 2025" data-en="Summary of the monthly performance of Block Producers for June 2025">Resumen del rendimiento mensual de Block Producers para Junio 2025</h3>
-        <p class="text-gray-600" data-es="Resumen generado automáticamente" data-en="Automatically generated summary">Resumen generado automáticamente</p>
+        <p class="text-gray-600" data-es="Reporte oficial actualizado mensualmente" data-en="Official report updated monthly">Reporte oficial actualizado mensualmente</p>
        </div><!-- Estadísticas rápidas -->
        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
         <div class="text-center p-4 bg-red-50 rounded-lg border border-red-200">
@@ -404,8 +404,8 @@
         <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
        </div>
-       <h3 class="text-xl font-semibold text-gray-600 mb-2" data-es="Completa el formulario" data-en="Complete the form">Completa el formulario</h3>
-       <p class="text-gray-500" data-es="Ingresa los datos para generar el reporte visual" data-en="Enter data to generate the visual report">Ingresa los datos para generar el reporte visual</p>
+       <h3 class="text-xl font-semibold text-gray-600 mb-2" data-es="Reporte Oficial Mensual" data-en="Official Monthly Report">Reporte Oficial Mensual</h3>
+       <p class="text-gray-500" data-es="Visualización actualizada del rendimiento de Block Producers" data-en="Updated visualization of Block Producer performance">Visualización actualizada del rendimiento de Block Producers</p>
       </div>
      </div>
     </div>
@@ -591,34 +591,68 @@
                     return null;
                 }
 
-                const response = await fetch(`https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.dataFile}`);
+                console.log(`Intentando cargar desde: https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.dataFile}`);
+                
+                const headers = {
+                    'Accept': 'application/vnd.github.v3+json'
+                };
+                
+                // Solo agregar token si existe (para escritura)
+                if (GITHUB_CONFIG.token) {
+                    headers['Authorization'] = `token ${GITHUB_CONFIG.token}`;
+                }
+
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.dataFile}`, {
+                    headers: headers
+                });
                 
                 if (response.ok) {
                     const fileData = await response.json();
                     const content = JSON.parse(atob(fileData.content));
                     
-                    // Actualizar datos locales
-                    downloadUrls = content.downloadUrls || downloadUrls;
-                    historicalReports = content.historicalReports || [];
+                    console.log('Datos encontrados en GitHub:', content);
+                    
+                    // Actualizar datos locales SOLO si existen en GitHub
+                    if (content.downloadUrls) {
+                        downloadUrls = { ...downloadUrls, ...content.downloadUrls };
+                        console.log('URLs de descarga actualizadas:', downloadUrls);
+                    }
+                    
+                    if (content.historicalReports) {
+                        historicalReports = content.historicalReports;
+                        console.log('Reportes históricos cargados:', historicalReports.length);
+                    }
+                    
+                    // Cargar reporte rápido si existe
+                    if (content.quickReport) {
+                        localStorage.setItem('telosQuickReport', JSON.stringify(content.quickReport));
+                        console.log('Reporte rápido cargado');
+                    }
                     
                     // Actualizar fecha de última actualización
                     if (content.lastUpdate) {
                         updateLastUpdateDisplay(content.lastUpdate.month, content.lastUpdate.year);
+                        console.log('Fecha de actualización cargada:', content.lastUpdate);
                     }
                     
-                    console.log('Datos cargados desde GitHub exitosamente');
+                    console.log('✅ Datos cargados desde GitHub exitosamente');
                     showNotification('Datos sincronizados desde GitHub', 'success');
                     return content;
                 } else if (response.status === 404) {
-                    // El archivo no existe, crear uno nuevo
-                    console.log('Archivo de datos no encontrado, se creará uno nuevo');
+                    console.log('❌ Archivo de datos no encontrado en GitHub (404)');
+                    showNotification('Repositorio no encontrado. Verifica la configuración de GitHub.', 'warning');
                     return null;
                 } else {
-                    throw new Error(`Error al cargar datos: ${response.status}`);
+                    throw new Error(`Error HTTP ${response.status}: ${response.statusText}`);
                 }
             } catch (error) {
-                console.error('Error cargando datos desde GitHub:', error);
-                showNotification('Error al cargar datos desde GitHub. Usando datos locales.', 'warning');
+                console.error('❌ Error cargando datos desde GitHub:', error);
+                
+                if (error.message.includes('fetch')) {
+                    showNotification('Error de conexión con GitHub. Usando datos locales.', 'warning');
+                } else {
+                    showNotification(`Error al cargar desde GitHub: ${error.message}`, 'warning');
+                }
                 return null;
             }
         }
@@ -802,6 +836,8 @@
                     document.getElementById('reportFormSection').classList.remove('hidden');
                     document.getElementById('reportResultsSection').classList.remove('lg:col-span-2');
                 }
+                // Cargar reporte rápido actual
+                loadQuickReport();
             }
         }
 
@@ -1314,89 +1350,144 @@
             }
         });
 
-        // Generar datos de ejemplo para usuarios públicos
-        function generateSampleReport() {
-            // Solo generar si no hay datos ya mostrados
-            if (document.getElementById('reportResults').classList.contains('hidden')) {
-                // Datos de ejemplo basados en el ejemplo del usuario
-                const sampleData = {
+        // Cargar reporte rápido desde GitHub o datos locales
+        function loadQuickReport() {
+            // Cargar datos del reporte rápido guardado
+            const savedQuickReport = localStorage.getItem('telosQuickReport');
+            let quickReportData = null;
+            
+            if (savedQuickReport) {
+                quickReportData = JSON.parse(savedQuickReport);
+            }
+            
+            // Si no hay datos guardados, usar datos de ejemplo
+            if (!quickReportData) {
+                quickReportData = {
+                    month: 'June',
+                    year: '2025',
                     inactive: ['KainosBP', 'TelosGreen', 'Big Iron', 'Telos Korea', 'TheTeloscope'],
                     p2p: ['CALEOS', 'Infinitybloc'],
                     json: ['Greymass', 'KainosBP'],
                     blockHistory: ['CALEOS', 'Infinitybloc', 'Greymass', 'KainosBP', 'Persiantelos', 'Swapsicledex', 'Big Iron', 'EOSArgentina', 'EOSAuthority', 'Telos Korea', 'Telos India', 'Creativblock', 'Mosaiblocks', 'ZKERA.FI', 'SNTNL', 'Telos Kitchen', 'Open republic', 'TheTeloscope', 'Primarch Technologies', 'LedgerWise', 'A-DEX BP', 'Blockbastrds'],
                     cpu: ['OrbitalBlock', 'Persiantelos', 'Creativeblock', 'Katalyotelos', 'Telos India']
                 };
-
-                // Actualizar título para junio 2025
-                const titleElement = document.getElementById('reportTitle');
-                const titleEs = 'Resumen del rendimiento mensual de Block Producers para Junio 2025';
-                const titleEn = 'Summary of the monthly performance of Block Producers for June 2025';
-                titleElement.textContent = currentLanguage === 'es' ? titleEs : titleEn;
-                titleElement.setAttribute('data-es', titleEs);
-                titleElement.setAttribute('data-en', titleEn);
-
-                // Actualizar contadores
-                document.getElementById('inactiveCount').textContent = sampleData.inactive.length;
-                document.getElementById('p2pCount').textContent = sampleData.p2p.length;
-                document.getElementById('jsonCount').textContent = sampleData.json.length;
-                document.getElementById('blockIssuesCount').textContent = sampleData.blockHistory.length;
-                document.getElementById('cpuIssuesCount').textContent = sampleData.cpu.length;
-
-                // Actualizar listas detalladas
-                document.getElementById('inactiveList').innerHTML = 
-                    sampleData.inactive.map(bp => `<span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('');
-
-                document.getElementById('p2pList').innerHTML = 
-                    sampleData.p2p.map(bp => `<span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('');
-
-                document.getElementById('jsonList').innerHTML = 
-                    sampleData.json.map(bp => `<span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('');
-
-                document.getElementById('blockList').innerHTML = 
-                    sampleData.blockHistory.map(bp => `<span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('');
-
-                document.getElementById('cpuList').innerHTML = 
-                    sampleData.cpu.map(bp => `<span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('');
-
-                // Crear gráfico
-                createPerformanceChart(
-                    sampleData.inactive.length, 
-                    sampleData.p2p.length, 
-                    sampleData.json.length, 
-                    sampleData.blockHistory.length, 
-                    sampleData.cpu.length
-                );
-
-                // Mostrar resultados
-                document.getElementById('reportPlaceholder').classList.add('hidden');
-                document.getElementById('reportResults').classList.remove('hidden');
             }
+            
+            // Mostrar el reporte
+            displayQuickReport(quickReportData);
+        }
+
+        // Mostrar reporte rápido
+        function displayQuickReport(data) {
+            // Actualizar título
+            const monthNames = {
+                'January': currentLanguage === 'es' ? 'Enero' : 'January',
+                'February': currentLanguage === 'es' ? 'Febrero' : 'February',
+                'March': currentLanguage === 'es' ? 'Marzo' : 'March',
+                'April': currentLanguage === 'es' ? 'Abril' : 'April',
+                'May': currentLanguage === 'es' ? 'Mayo' : 'May',
+                'June': currentLanguage === 'es' ? 'Junio' : 'June',
+                'July': currentLanguage === 'es' ? 'Julio' : 'July',
+                'August': currentLanguage === 'es' ? 'Agosto' : 'August',
+                'September': currentLanguage === 'es' ? 'Septiembre' : 'September',
+                'October': currentLanguage === 'es' ? 'Octubre' : 'October',
+                'November': currentLanguage === 'es' ? 'Noviembre' : 'November',
+                'December': currentLanguage === 'es' ? 'Diciembre' : 'December'
+            };
+
+            const titleText = currentLanguage === 'es' ? 
+                `Resumen del rendimiento mensual de Block Producers para ${monthNames[data.month]} ${data.year}` :
+                `Summary of the monthly performance of Block Producers for ${monthNames[data.month]} ${data.year}`;
+            
+            const titleElement = document.getElementById('reportTitle');
+            titleElement.textContent = titleText;
+            titleElement.setAttribute('data-es', `Resumen del rendimiento mensual de Block Producers para ${monthNames[data.month]} ${data.year}`);
+            titleElement.setAttribute('data-en', `Summary of the monthly performance of Block Producers for ${monthNames[data.month]} ${data.year}`);
+
+            // Actualizar contadores
+            document.getElementById('inactiveCount').textContent = data.inactive.length;
+            document.getElementById('p2pCount').textContent = data.p2p.length;
+            document.getElementById('jsonCount').textContent = data.json.length;
+            document.getElementById('blockIssuesCount').textContent = data.blockHistory.length;
+            document.getElementById('cpuIssuesCount').textContent = data.cpu.length;
+
+            // Actualizar listas detalladas
+            document.getElementById('inactiveList').innerHTML = data.inactive.length > 0 ? 
+                data.inactive.map(bp => `<span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
+                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay TSL/SSL inactivos reportados' : 'No TSL/SSL inactive reported'}</p>`;
+
+            document.getElementById('p2pList').innerHTML = data.p2p.length > 0 ? 
+                data.p2p.map(bp => `<span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
+                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay P2P inactivos reportados' : 'No P2P inactive reported'}</p>`;
+
+            document.getElementById('jsonList').innerHTML = data.json.length > 0 ? 
+                data.json.map(bp => `<span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
+                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay JSON inactivos reportados' : 'No JSON inactive reported'}</p>`;
+
+            document.getElementById('blockList').innerHTML = data.blockHistory.length > 0 ? 
+                data.blockHistory.map(bp => `<span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
+                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay problemas de historial de bloques reportados' : 'No block history issues reported'}</p>`;
+
+            document.getElementById('cpuList').innerHTML = data.cpu.length > 0 ? 
+                data.cpu.map(bp => `<span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
+                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay problemas de rendimiento CPU reportados' : 'No CPU performance issues reported'}</p>`;
+
+            // Crear gráfico
+            createPerformanceChart(data.inactive.length, data.p2p.length, data.json.length, data.blockHistory.length, data.cpu.length);
+
+            // Mostrar resultados
+            document.getElementById('reportPlaceholder').classList.add('hidden');
+            document.getElementById('reportResults').classList.remove('hidden');
         }
 
         // Cargar datos guardados al iniciar
         document.addEventListener('DOMContentLoaded', async function() {
-            // Cargar configuración de GitHub
+            // Configuración por defecto de GitHub (tu repositorio)
+            const defaultGithubConfig = {
+                owner: 'tu-usuario-github', // Cambia esto por tu usuario real
+                repo: 'telos-bp-reports',   // Cambia esto por tu repositorio real
+                token: '' // El token se configura desde el panel admin
+            };
+            
+            // Cargar configuración de GitHub (usar por defecto si no existe)
             const savedGithubConfig = localStorage.getItem('telosGithubConfig');
             if (savedGithubConfig) {
                 const config = JSON.parse(savedGithubConfig);
                 GITHUB_CONFIG.owner = config.owner;
                 GITHUB_CONFIG.repo = config.repo;
                 GITHUB_CONFIG.token = config.token;
+            } else {
+                // Usar configuración por defecto para lectura pública
+                GITHUB_CONFIG.owner = defaultGithubConfig.owner;
+                GITHUB_CONFIG.repo = defaultGithubConfig.repo;
+                // No necesitamos token para lectura pública
+            }
+            
+            // SIEMPRE intentar cargar datos desde GitHub primero
+            console.log('Intentando cargar datos desde GitHub...');
+            const githubData = await loadDataFromGitHub();
+            
+            // Si no se pudieron cargar desde GitHub, usar datos locales como fallback
+            if (!githubData) {
+                console.log('Cargando datos locales como fallback...');
                 
-                // Intentar cargar datos desde GitHub
-                await loadDataFromGitHub();
-            }
-            
-            // Cargar URLs guardadas (fallback local)
-            const savedUrls = localStorage.getItem('telosDownloadUrls');
-            if (savedUrls && Object.values(downloadUrls).every(url => url === '#')) {
-                downloadUrls = JSON.parse(savedUrls);
-            }
-            
-            // Cargar reportes históricos guardados (fallback local)
-            const savedReports = localStorage.getItem('telosHistoricalReports');
-            if (savedReports && historicalReports.length === 0) {
-                historicalReports = JSON.parse(savedReports);
+                // Cargar URLs guardadas (fallback local)
+                const savedUrls = localStorage.getItem('telosDownloadUrls');
+                if (savedUrls) {
+                    const localUrls = JSON.parse(savedUrls);
+                    // Solo usar URLs locales si no están vacías
+                    Object.keys(localUrls).forEach(key => {
+                        if (localUrls[key] && localUrls[key] !== '#') {
+                            downloadUrls[key] = localUrls[key];
+                        }
+                    });
+                }
+                
+                // Cargar reportes históricos guardados (fallback local)
+                const savedReports = localStorage.getItem('telosHistoricalReports');
+                if (savedReports) {
+                    historicalReports = JSON.parse(savedReports);
+                }
             }
             
             // Cargar idioma guardado
@@ -1426,8 +1517,8 @@
                     `${monthNamesEn[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
             }
 
-            // Generar datos de ejemplo para usuarios públicos
-            generateSampleReport();
+            // Cargar reporte rápido actual
+            loadQuickReport();
         });
 
         // Variables para el reporte rápido
@@ -1439,8 +1530,8 @@
             generateQuickReport();
         });
 
-        // Generar reporte rápido
-        function generateQuickReport() {
+        // Generar reporte rápido (solo admin)
+        async function generateQuickReport() {
             const month = document.getElementById('reportMonth').value;
             const year = document.getElementById('reportYear').value;
             const inactive = document.getElementById('inactiveExpired').value.trim();
@@ -1456,67 +1547,44 @@
             const blockIssuesList = blockHistory ? blockHistory.split(',').map(s => s.trim()).filter(s => s) : [];
             const cpuIssuesList = cpuPerformance ? cpuPerformance.split(',').map(s => s.trim()).filter(s => s) : [];
 
-            // Actualizar título
-            const monthNames = {
-                'January': currentLanguage === 'es' ? 'Enero' : 'January',
-                'February': currentLanguage === 'es' ? 'Febrero' : 'February',
-                'March': currentLanguage === 'es' ? 'Marzo' : 'March',
-                'April': currentLanguage === 'es' ? 'Abril' : 'April',
-                'May': currentLanguage === 'es' ? 'Mayo' : 'May',
-                'June': currentLanguage === 'es' ? 'Junio' : 'June',
-                'July': currentLanguage === 'es' ? 'Julio' : 'July',
-                'August': currentLanguage === 'es' ? 'Agosto' : 'August',
-                'September': currentLanguage === 'es' ? 'Septiembre' : 'September',
-                'October': currentLanguage === 'es' ? 'Octubre' : 'October',
-                'November': currentLanguage === 'es' ? 'Noviembre' : 'November',
-                'December': currentLanguage === 'es' ? 'Diciembre' : 'December'
+            // Crear objeto de datos del reporte
+            const quickReportData = {
+                month: month,
+                year: year,
+                inactive: inactiveList,
+                p2p: p2pList,
+                json: jsonList,
+                blockHistory: blockIssuesList,
+                cpu: cpuIssuesList,
+                lastModified: new Date().toISOString()
             };
 
-            const titleText = currentLanguage === 'es' ? 
-                `Resumen del rendimiento mensual de Block Producers para ${monthNames[month]} ${year}` :
-                `Summary of the monthly performance of Block Producers for ${monthNames[month]} ${year}`;
+            // Mostrar el reporte
+            displayQuickReport(quickReportData);
+
+            // Guardar en GitHub junto con otros datos
+            const currentData = await loadDataFromGitHub() || {
+                downloadUrls: downloadUrls,
+                historicalReports: historicalReports,
+                lastUpdate: null
+            };
+
+            const dataToSave = {
+                ...currentData,
+                quickReport: quickReportData,
+                lastModified: new Date().toISOString()
+            };
+
+            // Sincronizar con GitHub
+            const success = await saveDataToGitHub(dataToSave);
             
-            const titleElement = document.getElementById('reportTitle');
-            titleElement.textContent = titleText;
-            titleElement.setAttribute('data-es', `Resumen del rendimiento mensual de Block Producers para ${monthNames[month]} ${year}`);
-            titleElement.setAttribute('data-en', `Summary of the monthly performance of Block Producers for ${monthNames[month]} ${year}`);
-
-            // Actualizar contadores
-            document.getElementById('inactiveCount').textContent = inactiveList.length;
-            document.getElementById('p2pCount').textContent = p2pList.length;
-            document.getElementById('jsonCount').textContent = jsonList.length;
-            document.getElementById('blockIssuesCount').textContent = blockIssuesList.length;
-            document.getElementById('cpuIssuesCount').textContent = cpuIssuesList.length;
-
-            // Actualizar listas detalladas
-            document.getElementById('inactiveList').innerHTML = inactiveList.length > 0 ? 
-                inactiveList.map(bp => `<span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
-                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay TSL/SSL inactivos reportados' : 'No TSL/SSL inactive reported'}</p>`;
-
-            document.getElementById('p2pList').innerHTML = p2pList.length > 0 ? 
-                p2pList.map(bp => `<span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
-                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay P2P inactivos reportados' : 'No P2P inactive reported'}</p>`;
-
-            document.getElementById('jsonList').innerHTML = jsonList.length > 0 ? 
-                jsonList.map(bp => `<span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
-                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay JSON inactivos reportados' : 'No JSON inactive reported'}</p>`;
-
-            document.getElementById('blockList').innerHTML = blockIssuesList.length > 0 ? 
-                blockIssuesList.map(bp => `<span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
-                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay problemas de historial de bloques reportados' : 'No block history issues reported'}</p>`;
-
-            document.getElementById('cpuList').innerHTML = cpuIssuesList.length > 0 ? 
-                cpuIssuesList.map(bp => `<span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-md text-xs mr-2 mb-2">${bp}</span>`).join('') :
-                `<p class="text-gray-500">${currentLanguage === 'es' ? 'No hay problemas de rendimiento CPU reportados' : 'No CPU performance issues reported'}</p>`;
-
-            // Crear gráfico
-            createPerformanceChart(inactiveList.length, p2pList.length, jsonList.length, blockIssuesList.length, cpuIssuesList.length);
-
-            // Mostrar resultados
-            document.getElementById('reportPlaceholder').classList.add('hidden');
-            document.getElementById('reportResults').classList.remove('hidden');
-
-            showNotification(currentLanguage === 'es' ? 'Reporte generado exitosamente' : 'Report generated successfully', 'success');
+            if (success) {
+                localStorage.setItem('telosQuickReport', JSON.stringify(quickReportData));
+                showNotification('Reporte rápido generado y sincronizado correctamente', 'success');
+            } else {
+                localStorage.setItem('telosQuickReport', JSON.stringify(quickReportData));
+                showNotification('Reporte rápido generado localmente (error en GitHub)', 'warning');
+            }
         }
 
         // Crear gráfico de rendimiento
@@ -1674,5 +1742,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997c245990dd492b',t:'MTc2MjAwNzk3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'997c680ca5bf492b',t:'MTc2MjAxMDc0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
