@@ -1,11 +1,19 @@
 {
   "downloadUrls": {
-    "finalReport": "https://drive.google.com/uc?export=download&id=1_LAAM_BiKKlM_bE6VUmimO_n6EADNh54",
+    "finalReport": "https://drive.google.com/uc?export=download&id=1KYhy1a1whRNBPLwwS9MHpaJ84X-bdJQp",
     "blocksLost": "https://drive.google.com/uc?export=download&id=1zedPNt77qtw-DK12NlcGU1N3j4TFhsQY",
     "testnetBook": "https://docs.google.com/uc?export=download&id=1MJubKx3EFbkdLlO6-O4Q62XnXovYWJlp",
     "additionalServices": "https://docs.google.com/uc?export=download&id=1i_qq4TNTZHbgbcqOdxAVvh-zIZYUvS1I"
   },
   "historicalReports": [
+    {
+      "id": 1764530085599,
+      "month": "Noviembre",
+      "year": "2025",
+      "type": "Final Report",
+      "url": "https://drive.google.com/uc?export=download&id=1_LAAM_BiKKlM_bE6VUmimO_n6EADNh54",
+      "date": "2025-11-30T19:14:45.599Z"
+    },
     {
       "id": 1762019022074,
       "month": "Agosto",
@@ -37,80 +45,11 @@
       "type": "Final Report",
       "url": "https://drive.google.com/uc?export=download&id=1SxpgDUFVRHwHMpJM2quAoGM4aulADLcG",
       "date": "2025-11-01T17:37:30.745Z"
-    },
-    {
-      "id": 1764530085599,
-      "month": "Noviembre",
-      "year": "2025",
-      "type": "Final Report",
-      "url": "https://drive.google.com/uc?export=download&id=1_LAAM_BiKKlM_bE6VUmimO_n6EADNh54",
-      "date": "2025-11-30T19:14:45.599Z"
     }
   ],
-  "lastUpdate": null,
-  "lastModified": "2025-11-30T20:11:02.448Z",
-  "quickReport": {
-    "month": "November",
-    "year": "2025",
-    "inactive": [
-      "KainosBP",
-      "Teleology",
-      "BigIronBPTex",
-      "South Africa",
-      "Theteloscope",
-      "Orbitalblock",
-      "BP.Any",
-      "Smartelos",
-      "Telosamigoss",
-      "Cryptoblock2",
-      "Cryptoblock"
-    ],
-    "p2p": [
-      "Theteloscope",
-      "BP.Any",
-      "Smartelos",
-      "Cryptoblock2",
-      "Cryptoblock"
-    ],
-    "json": [
-      "Theteloscope",
-      "BP.Any",
-      "Smartelos",
-      "Cryptoblock2",
-      "Cryptoblock"
-    ],
-    "blockHistory": [
-      "Caleos",
-      "Infinitybloc",
-      "Telos Madrid",
-      "KainosBP",
-      "Persiantelos",
-      "Swapsicle",
-      "Teleology",
-      "BigIronBPTex",
-      "Telos India",
-      "EOSArgentina",
-      "EOSAuthority",
-      "Mosaicblocks",
-      "South Africa",
-      "SENTNL",
-      "Theteloscope",
-      "Telos Kitchen",
-      "Ledgerwise",
-      "A-AdexBP",
-      "Total TelosBP",
-      "Orbitalblock",
-      "BP.Any",
-      "Smartelos",
-      "BF.GM",
-      "Telosamigoss",
-      "Cryptoblock2",
-      "Cryptoblock"
-    ],
-    "cpu": [
-      "Katalyotelos",
-      "Veradox"
-    ],
-    "lastModified": "2025-11-30T20:11:01.923Z"
-  }
+  "lastUpdate": {
+    "month": "Noviembre",
+    "year": "2025"
+  },
+  "lastModified": "2025-11-30T20:23:30.832Z"
 }
