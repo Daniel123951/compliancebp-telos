@@ -1,11 +1,19 @@
 {
   "downloadUrls": {
-    "finalReport": "https://drive.google.com/uc?export=download&id=1UuvOEyXTtRol95ouCeGFyAY6SPa-skI0",
-    "blocksLost": "https://drive.google.com/uc?export=download&id=1zVdAQn84BCvONE5GnBAmo9z_eU3UakoJ",
-    "testnetBook": "https://drive.google.com/uc?export=download&id=1yCLHkFdFsq1srZuSkDDjqB9yAhBBtUEQ",
-    "additionalServices": "https://drive.google.com/uc?export=download&id=1nVqgNiL9jDrY-Tgeen_9WF3bNyOh0sre"
+    "finalReport": "https://drive.google.com/uc?export=download&id=1_LAAM_BiKKlM_bE6VUmimO_n6EADNh54",
+    "blocksLost": "https://drive.google.com/uc?export=download&id=1zedPNt77qtw-DK12NlcGU1N3j4TFhsQY",
+    "testnetBook": "https://docs.google.com/uc?export=download&id=1MJubKx3EFbkdLlO6-O4Q62XnXovYWJlp",
+    "additionalServices": "https://docs.google.com/uc?export=download&id=1i_qq4TNTZHbgbcqOdxAVvh-zIZYUvS1I"
   },
   "historicalReports": [
+    {
+      "id": 1762019022074,
+      "month": "Agosto",
+      "year": "2025",
+      "type": "Final Report",
+      "url": "https://drive.google.com/uc?export=download&id=1-fS0AvfRfS6x-YFUZm71r_L38SBqCJeO",
+      "date": "2025-11-01T17:43:42.074Z"
+    },
     {
       "id": 1762018965338,
       "month": "Junio",
@@ -29,66 +37,11 @@
       "type": "Final Report",
       "url": "https://drive.google.com/uc?export=download&id=1SxpgDUFVRHwHMpJM2quAoGM4aulADLcG",
       "date": "2025-11-01T17:37:30.745Z"
-    },
-    {
-      "id": 1762019022074,
-      "month": "Agosto",
-      "year": "2025",
-      "type": "Final Report",
-      "url": "https://drive.google.com/uc?export=download&id=1-fS0AvfRfS6x-YFUZm71r_L38SBqCJeO",
-      "date": "2025-11-01T17:43:42.074Z"
     }
   ],
-  "lastUpdate": null,
-  "lastModified": "2025-11-01T21:26:20.337Z",
-  "quickReport": {
-    "month": "October",
-    "year": "2025",
-    "inactive": [
-      "KAINOSBP",
-      "BIGIRONBPTEX",
-      "SOUTHAFRICA",
-      "THETELOSCOPE",
-      "ORBITALBLOCK",
-      "BP.ANY SMARTELOS"
-    ],
-    "p2p": [
-      "THETELOSCOPE",
-      "BP.ANY",
-      "SMARTELOS"
-    ],
-    "json": [
-      "THETELOSCOPE",
-      "BP.ANY",
-      "SMARTELOS"
-    ],
-    "blockHistory": [
-      "CALEOS",
-      "INFINITYBLOC",
-      "TELOS MADRID",
-      "KAINOSBP",
-      "PERSIANTELOS",
-      "SWAPSICLE",
-      "BIGIRONBPTEX",
-      "TELOS INDIABP",
-      "EOSARGENTINA",
-      "EOSAUTHORITY",
-      "MOSAICBLOCKS",
-      "SOUTHAFRICA",
-      "SENTNL",
-      "THETELOSCOPE",
-      "LEDGERWISE",
-      "TELOS KITCHEN",
-      "A-DEXBP",
-      "ORBITALBLOCK",
-      "TOTALTELOSBP",
-      "BP.ANY",
-      "SMARTELOS"
-    ],
-    "cpu": [
-      "KATALYOTELOS",
-      "VERADOX"
-    ],
-    "lastModified": "2025-11-01T21:26:20.307Z"
-  }
+  "lastUpdate": {
+    "month": "Noviembre",
+    "year": "2025"
+  },
+  "lastModified": "2025-11-30T19:14:43.286Z"
 }
