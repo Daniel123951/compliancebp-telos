@@ -48,5 +48,69 @@
     }
   ],
   "lastUpdate": null,
-  "lastModified": "2025-11-30T19:14:45.599Z"
+  "lastModified": "2025-11-30T20:11:02.448Z",
+  "quickReport": {
+    "month": "November",
+    "year": "2025",
+    "inactive": [
+      "KainosBP",
+      "Teleology",
+      "BigIronBPTex",
+      "South Africa",
+      "Theteloscope",
+      "Orbitalblock",
+      "BP.Any",
+      "Smartelos",
+      "Telosamigoss",
+      "Cryptoblock2",
+      "Cryptoblock"
+    ],
+    "p2p": [
+      "Theteloscope",
+      "BP.Any",
+      "Smartelos",
+      "Cryptoblock2",
+      "Cryptoblock"
+    ],
+    "json": [
+      "Theteloscope",
+      "BP.Any",
+      "Smartelos",
+      "Cryptoblock2",
+      "Cryptoblock"
+    ],
+    "blockHistory": [
+      "Caleos",
+      "Infinitybloc",
+      "Telos Madrid",
+      "KainosBP",
+      "Persiantelos",
+      "Swapsicle",
+      "Teleology",
+      "BigIronBPTex",
+      "Telos India",
+      "EOSArgentina",
+      "EOSAuthority",
+      "Mosaicblocks",
+      "South Africa",
+      "SENTNL",
+      "Theteloscope",
+      "Telos Kitchen",
+      "Ledgerwise",
+      "A-AdexBP",
+      "Total TelosBP",
+      "Orbitalblock",
+      "BP.Any",
+      "Smartelos",
+      "BF.GM",
+      "Telosamigoss",
+      "Cryptoblock2",
+      "Cryptoblock"
+    ],
+    "cpu": [
+      "Katalyotelos",
+      "Veradox"
+    ],
+    "lastModified": "2025-11-30T20:11:01.923Z"
+  }
 }
